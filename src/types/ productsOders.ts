@@ -9,16 +9,18 @@ export type Product = {
 	order_items:    OrderItem[]
 }
 
-export type Order = {
+export type createProductData = {
+	name: string,
+    description: string,
+    price: number,
+    images: JSON,
+    stock_status: string,
+    stock_quantity: number,
+}
+
+export type Order = createOrderData & {
 
   id: number,
-  customer_first_name: String
-  customer_last_name:  String
-  customer_address:  String
-  customer_postcode:   String
-  customer_city:      String
-  customer_email:      String
-  customer_phone?:     String
   order_total:        number
   order_items:        OrderItem[]
 }
@@ -32,4 +34,14 @@ export type OrderItem = {
   order_id:   number
   product:    Product
   product_id: number
+}
+
+export type createOrderData = {
+	customer_first_name: string,
+	customer_last_name: string,
+	customer_address: string,
+	customer_postcode: number
+	customer_city: string
+	customer_email: string
+	customer_phone?: number
 }
