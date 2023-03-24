@@ -1,8 +1,9 @@
 import { beforeAll, afterEach, afterAll, describe, it, expect } from 'vitest'
-import { server } from '../mocks/server'
+import { orderData } from '../types/ productsOders'
+/* import { server } from '../mocks/server'
 import * as ordersAPI from '../services/ordersAPI'
-import { createOrderData } from '../types/ productsOders'
-
+import { orderData } from '../types/ productsOders'
+ */
 
 /* // 🏎️ Boot API mocking
 beforeAll(() => {
@@ -19,7 +20,7 @@ afterAll(() => {
 	server.close()
 }) */
 
-const newOrder: createOrderData = {
+const newOrder: orderData = {
 	customer_first_name: 'hej',
 	customer_last_name: 'hejdå',
 	customer_address: 'hejvägen 45',

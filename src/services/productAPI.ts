@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { createProductData, createProductData, Product } from '../types/ productsOders'
+import { T } from 'vitest/dist/types-fafda418'
+import {ProductData, Product, productList, JSend, productResponse } from '../types/ productsOders'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
@@ -14,26 +15,47 @@ export const post = async <T>(endpoint: string, data: any) => {
 }
 
 /**
+ * Get all products response
+ */
+export const getResponseAllproducts = () => {
+	console.log(getResponseAllproducts)
+	return get<JSend<T>>('/products')
+}
+
+/**
  * Get all products
  */
 export const getProducts = () => {
 	console.log(getProducts)
-	return get<Product[]>('/products')
+	return get<productList>('/products')
 }
 
-
 /**
+ * Get a product response
+ */
+export const getResponseProduct = (id:number) => {
+	console.log(getResponseProduct)
+	return get<productResponse["data"]>(`/product/${id}`)
+}
+/**›
  * Get a single product
  */
 export const getProduct = (id: number) => {
 	console.log(getProduct)
-	return get<Product>(`/product/${id}`)
+	return get<productResponse>(`/product/${id}`)
 }
 
 /**
- * Create a new todo
+ * Get a response of created product
  */
-export const createProduct = (product: createProductData) => {
+export const createproductResponse = () => {
+	console.log(createproductResponse)
+	return get<JSend<Product>>('/product')
+}
+/**
+ * Create a new product
+ */
+export const createProduct = (product: ProductData) => {
 	console.log(createProduct)
 	return post<Product>(`/products`, product)
 }
