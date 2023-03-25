@@ -42,7 +42,7 @@ export const getResponseProduct = (id:number) => {
  */
 export const getProduct = (id: number) => {
 	console.log(getProduct)
-	return get<productResponse>(`/product/${id}`)
+	return get<productList>(`/products/${id}`)
 }
 
 /**
@@ -57,5 +57,5 @@ export const createproductResponse = () => {
  */
 export const createProduct = (product: ProductData) => {
 	console.log(createProduct)
-	return post<Product>(`/products`, product)
+	return post<JSend<Product>>(`/products`, product)
 }

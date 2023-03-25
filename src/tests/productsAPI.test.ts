@@ -75,8 +75,8 @@ describe('ProductAPI', () => {
 	//kan hämta den skapade produkten
 	it('Should create and then get the product', async () => {
 		const createdproduct = await productAPI.createProduct(newProduct)
-		const createdproductData = await productAPI.getProduct(createdproduct.id)
-		expect(createdproductData.data.id).toStrictEqual(createdproduct.id)
+		const createdproductData = await productAPI.getProduct(createdproduct.data.id)
+		expect(createdproductData).toStrictEqual(createdproduct)
 
 		//const productResponse = await productAPI.getResponseProduct(createdproductDataId)
 
