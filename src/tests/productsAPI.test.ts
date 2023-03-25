@@ -37,9 +37,6 @@ describe('ProductAPI', () => {
 		expect(productsResponse.status).toBe("success")
 		expect( Array.isArray(productsResponse.data) ).toBe(true)
 
-
-
-
 		console.log('get products', productsResponse.status)
 		console.log('get products', productsResponse.data)
 
@@ -49,12 +46,6 @@ describe('ProductAPI', () => {
 	it('Should create a product', async () =>{
 		const product = await productAPI.createProduct(newProduct)
 		console.log("this is the product", product)
-
-
-		/* expect(product).toMatchObject({
-			status: 'success',
-			data: {}
-				}) */
 
 		expect(product.data).toMatchObject({
 			id: expect.any(Number),
@@ -78,13 +69,16 @@ describe('ProductAPI', () => {
 		const createdproductData = await productAPI.getProduct(createdproduct.data.id)
 		expect(createdproductData).toStrictEqual(createdproduct)
 
-		//const productResponse = await productAPI.getResponseProduct(createdproductDataId)
+	})
 
-
-
-
-
-
+	it('should create and then find the product among all products', async () => {
+			// create a new product
+			const product = await productAPI.createProduct(newProduct)
+			// get all products
+			const productsResponse = await productAPI.getResponseAllproducts()
+		expect(productsResponse.status).toBe("success")
+			//expect created product to exist in the array pf all products
+		expect(productsResponse.data).toContainEqual(product.data)
 	})
 })
 
