@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { T } from 'vitest/dist/types-fafda418'
-import {ProductData, Product, productList, JSend, productResponse } from '../types/ productsOders'
+import {ProductData, Product, productList, JSend, productResponse } from '../types/ products'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
 

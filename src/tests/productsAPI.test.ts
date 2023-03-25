@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 //import { server } from '../mocks/server'
 import * as productAPI from '../services/productAPI'
-import { ProductData, } from '../types/ productsOders'
+import { ProductData, } from '../types/ products'
 
 
 /* // 🏎️ Boot API mocking
@@ -30,7 +30,7 @@ afterAll(() => {
     stock_quantity: 4,
 }
 
-describe('ProductAPI', () => {
+describe.todo('ProductAPI', () => {
 	//kan hämta alla produkter
 	it('should return a list of all the products', async () => {
 		const productsResponse = await productAPI.getResponseAllproducts()

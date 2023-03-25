@@ -1,5 +1,5 @@
 import {rest } from 'msw'
-import {Product, Order} from '../types/ productsOders'
+import {Product, Order} from '../types/ products'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
