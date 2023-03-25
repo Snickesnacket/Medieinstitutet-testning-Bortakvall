@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { orderData, Order, } from '../types/ productsOders'
+import { T } from 'vitest/dist/types-fafda418'
+import { orderData, Order, JSend, OrderItem, orderList, } from '../types/ productsOders'
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
@@ -18,7 +19,7 @@ export const post = async <T>(endpoint: string, data: any) => {
  */
 export const getOrders = () => {
 	console.log(getOrders)
-	return get<Order[]>('/orders')
+	return get<JSend<T>>('/orders')
 }
 
 
@@ -27,13 +28,15 @@ export const getOrders = () => {
  */
 export const getOrder = (id: number) => {
 	console.log(getOrder)
-	return get<Order>(`/order/${id}`)
+	return get<orderList>(`/orders/${id}`)
 }
+
 
 /**
  * Create a new order
  */
 export const createOrder = (order: orderData) => {
 	console.log(createOrder)
-	return post<Order>(`/orders`, order)
+	return post<JSend<Order<OrderItem>>>(`/orders`, order)
 }
+

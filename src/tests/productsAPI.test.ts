@@ -58,8 +58,6 @@ describe('ProductAPI', () => {
 					},
 			stock_status: "instock",
 			stock_quantity: 4,
-
-			//order_items: []
 		})
 
 	})

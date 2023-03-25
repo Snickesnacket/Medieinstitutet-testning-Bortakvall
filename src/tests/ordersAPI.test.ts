@@ -22,11 +22,11 @@ const newOrder: orderData = {
 	customer_first_name: 'hej',
 	customer_last_name: 'hejdå',
 	customer_address: 'hejvägen 45',
-	customer_postcode: 89756,
+	customer_postcode: "89756",
 	customer_city: 'Hejsingborg',
 	customer_email: 'hej@hejhej.se',
-	customer_phone: +46745454567,
-
+	customer_phone: "+46745454567",
+	order_total: 45,
 }
 
 describe('ordersAPI', () => {
@@ -42,16 +42,32 @@ describe('ordersAPI', () => {
 	})
 	//kan skapa en ny order
 	it('should create a order', async  () => {
+		const order = await ordersAPI.createOrder(newOrder)
+		console.log("this is the order", order)
 
+	 	expect(order.data).toMatchObject({
+			id: expect.any(Number),
+			customer_first_name: 'hej',
+			customer_last_name: 'hejdå',
+			customer_address: 'hejvägen 45',
+			customer_postcode: "89756",
+			customer_city: 'Hejsingborg',
+			customer_email: 'hej@hejhej.se',
+			customer_phone: "+46745454567",
+			order_total: 45,
+
+		})
 	})
+
 	//kan hämta den skapade ordern
 	it('should create a order and then return the order', async () => {
 
 	})
+
 })
 
 
-export { ordersAPI }
+//export { ordersAPI }
 /*
 describe('ProductAPI', () => {
 	//kan hämta alla produkter
