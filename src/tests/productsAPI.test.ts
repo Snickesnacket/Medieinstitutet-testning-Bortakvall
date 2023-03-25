@@ -1,12 +1,13 @@
-import { describe, it, expect } from 'vitest'
-//import { server } from '../mocks/server'
+import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest'
+import { server } from '../mocks/server'
 import * as productAPI from '../services/productAPI'
 import { ProductData, } from '../types/products'
 
-
-/* // 🏎️ Boot API mocking
+//🏎️ Boot API mocking
 beforeAll(() => {
 	server.listen()
+	server.listHandlers()
+	console.log("This is the listhandler", server.listHandlers())
 })
 
 // 🧨 Reset handlers
@@ -17,7 +18,8 @@ afterEach(() => {
 // 🧹 Clean up after ourselves
 afterAll(() => {
 	server.close()
-}) */
+})
+
  const newProduct: ProductData = {
 	name: "Pelles Pangare",
     description: "so goooooood",
@@ -37,15 +39,11 @@ describe('ProductAPI', () => {
 		expect(productsResponse.status).toBe("success")
 		expect( Array.isArray(productsResponse.data) ).toBe(true)
 
-		console.log('get products', productsResponse.status)
-		console.log('get products', productsResponse.data)
-
 	})
 
 	//kan skapa en ny produkt
 	it('Should create a product', async () =>{
 		const product = await productAPI.createProduct(newProduct)
-		console.log("this is the product", product)
 
 		expect(product.data).toMatchObject({
 			id: expect.any(Number),
@@ -79,5 +77,3 @@ describe('ProductAPI', () => {
 		expect(productsResponse.data).toContainEqual(product.data)
 	})
 })
-
-
