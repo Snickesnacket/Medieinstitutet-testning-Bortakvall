@@ -1,24 +1,9 @@
-import { describe, it, expect, beforeAll, afterEach, afterAll } from 'vitest'
-import { server } from '../mocks/server'
+import { describe, it, expect } from 'vitest'
+
 import * as productAPI from '../services/productAPI'
 import { ProductData, } from '../types/products'
 
-/* //🏎️ Boot API mocking
-beforeAll(() => {
-	server.listen()
-	server.listHandlers()
-	console.log("This is the listhandler", server.listHandlers())
-})
 
-// 🧨 Reset handlers
-afterEach(() => {
-	server.resetHandlers()
-})
-
-// 🧹 Clean up after ourselves
-afterAll(() => {
-	server.close()
-}) */
 
  const newProduct: ProductData = {
 	name: "Pelles Pangare",

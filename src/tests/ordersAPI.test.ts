@@ -1,22 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { OrderData } from '../types/order'
 import * as ordersAPI from '../services/ordersAPI'
-// import { server } from '../mocks/server'
-
-/* // 🏎️ Boot API mocking
-beforeAll(() => {
-	server.listen()
-})
-
-// 🧨 Reset handlers
-afterEach(() => {
-	server.resetHandlers()
-})
-
-// 🧹 Clean up after ourselves
-afterAll(() => {
-	server.close()
-}) */
 
 
 const newOrder: OrderData = {
