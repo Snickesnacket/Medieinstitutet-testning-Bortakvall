@@ -38,6 +38,7 @@ export const getResponseProduct = (id:number) => {
  * Get a single product
  */
 export const getProduct = (id: number) => {
+	console.log(getProduct)
 	return get<Product>(`/products/${id}`)
 }
 

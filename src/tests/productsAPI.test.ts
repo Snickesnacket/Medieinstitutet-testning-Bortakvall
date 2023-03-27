@@ -50,29 +50,20 @@ describe('ProductAPI', () => {
 	})
 
 	//kan skapa en ny produkt
-	it.todo('Should create a product', async () =>{
-
-		const aProduct = {
-                name: '',
-                description: '',
-                price: 0,
-                images: '',
-                stock_status: '',
-                stock_quantity: 0
-		}
-		const product = await productAPI.createProduct(aProduct)
+	it('Should create a product', async () =>{
+		const product = await productAPI.createProduct(newProduct)
 		expect(product.status).toBe("success")
 		expect(product.data).toMatchObject({
-			ide: expect.any(Number),
-			namee: "Pelles Pangare",
-			descripteion: "so goooooood",
-			preice:  3,
-			imagees: {
+			id: expect.any(Number),
+			name: "Pelles Pangare",
+			description: "so goooooood",
+			price:  3,
+			images: {
 						thumbnail: "/storage/products/thumbnails/1997509-300x300.png",
 						large: "/storage/products/1997509.png"
 					},
-			stock_setatus: "instock",
-			stock_quaentity: 4,
+			stock_status: "instock",
+			stock_quantity: 4,
 		})
 	})
 
