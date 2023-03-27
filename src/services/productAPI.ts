@@ -38,7 +38,7 @@ export const getResponseProduct = (id:number) => {
  * Get a single product
  */
 export const getProduct = (id: number) => {
-	return get<ProductList>(`/products/${id}`)
+	return get<Product>(`/products/${id}`)
 }
 
 /**

@@ -31,7 +31,7 @@ export const handlers = [
 	rest.get(BASE_URL + '/products/:productId', (req, res, ctx) => {
 		const productId = Number(req.params.productId)
 
-		// find the product among the dummyproducts
+		// find the product among the dummyproduct
 		const product = dummyProducts.find(product => product.id === productId)
 
 		// if todo didn't exist, respond with 404
