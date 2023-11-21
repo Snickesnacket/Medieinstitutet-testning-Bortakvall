@@ -3,7 +3,7 @@
 
 ## Betyg: G 
 
-## Enhetstester med Vitest, Axios, jest
+##  Vitest, Axios, jest, Typescript
 
 Ladda ner repot och: 
 1. Kör `npm install`
