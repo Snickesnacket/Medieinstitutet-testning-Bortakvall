@@ -6,13 +6,20 @@
 ## Enhetstester med Vitest, Axios, jest
 
 Ladda ner repot och: 
-3. Kör `npm install`
+1. Kör `npm install`
 
 Ladda ner repot medieinstitutet_API_bortkvall och: 
-4. Starta ditt Bortakväll-API
-5. Kopiera `.env.example` till `.env` och fyll i URL:en till Bortakväll-API
-6. Skapa tester enligt kravspecifikationen
-7. Kör testerna
+2. Kör `npm install`
+3. Kopiera `.env.example` till `.env` 
+4. Ladda ner och installera mamp och ställ in till MySQL
+5. Kör `npm install -g env-cmd`
+6. Kör `npx prisma migrate dev` 
+7. Kör `npm run build` 
+8. Kör `npm run start` 
+
+
+9. Skapa tester enligt kravspecifikationen
+10. Kör testerna
     - Kör `npm test` för att köra testerna
     - Kör `npm test:verbose` för att köra testerna i verbose-läge
     - Kör `npm test:ui` för att köra testerna i UI-läge (se resultatet i en webbläsare)
@@ -39,43 +46,3 @@ kan skapa en ny order
 kan hämta den skapade ordern
 För varje test ska ni säkerställa vad ni tycker är rimligt
 
-
-
-# Medieinstitutet-Testning-TODO
-
-## Betyg: G 
-
-
-## Enhetstester med jest
-
-Ladda ner repot och kör:
-
-- `npm install`
-- `npm run dev`
-
-För att starta testerna:
-
-- `npm run test`
-
-För att få en code coverage report så kör:
-
-- `npm run coverage`
-
-## Uppgiftsbeskrivning
-Bedömningskriterier
-På denna uppgiften kan ni få IG/G.
-
-Skapa nedan 7 tester för de funktioner som finns i `functions.ts`. Ni får så klart skapa fler tester om ni vill, men nedan krävs för godkänt. Detta kommer att ge er ett G.
-
-- add todo
-  - should add a todo
-  - should not add a todo with empty title
-  - should not add a todo with title shorter than 3 characters
-- toggle todo
-  - should toggle a todo
-  - should not toggle a todo that does not exist
-- delete todo
-  - should delete a todo
-  - should not delete a todo that does not exist
- 
-  
